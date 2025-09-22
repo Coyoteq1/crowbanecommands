@@ -1,0 +1,137 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>CrowbaneCommands</AssemblyName>
+    <RootNamespace>CrowbaneCommands</RootNamespace>
+    <Description>Crowbane command suite</Description>
+    <Version>0.1.10</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <!-- Avoid duplicate assembly attributes when other sources define them -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- Prevent duplicate TargetFramework attribute generation -->
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <BepInExPluginGuid>crowbane.commands</BepInExPluginGuid>
+    <BepInExPluginName>CrowbaneCommands</BepInExPluginName>
+    <BepInExPluginVersion>0.1.10</BepInExPluginVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Ensure Unity project under Crowbane/ is fully excluded from this plugin build -->
+    <Compile Remove="Crowbane\**\*.cs" />
+    <Compile Remove="Crowbane/**/*.cs" />
+    <EmbeddedResource Remove="Crowbane\**\*" />
+    <EmbeddedResource Remove="Crowbane/**/*" />
+    <None Remove="Crowbane\**\*" />
+    <None Remove="Crowbane/**/*" />
+    <!-- Exclude DecompileSoul console app from this library build -->
+    <Compile Remove="DecompileSoul\**\*.cs" />
+    <EmbeddedResource Remove="DecompileSoul\**\*" />
+    <None Remove="DecompileSoul\**\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\English.json" />
+    <EmbeddedResource Include="Data\PrefabNames.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="BepInEx.Core">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\BepInEx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Unity.IL2CPP">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\BepInEx.Unity.IL2CPP.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Il2CppInterop.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Unity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Physics">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Unity.Physics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Physics.Hybrid">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Unity.Physics.Hybrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Transforms">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Unity.Transforms.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Stunlock.Core">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Stunlock.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Stunlock.Core.Animation">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Stunlock.Core.Animation.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectM">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\ProjectM.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectM.Shared">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\ProjectM.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectM.Behaviours">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\ProjectM.Behaviours.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectM.Gameplay.Scripting">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\ProjectM.Gameplay.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectM.Gameplay.Systems">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\ProjectM.Gameplay.Systems.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectM.Misc.Systems">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\ProjectM.Misc.Systems.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectM.CastleBuilding.Systems">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\ProjectM.CastleBuilding.Systems.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectM.GeneratedNetCode">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\ProjectM.GeneratedNetCode.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectM.CodeGeneration">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\ProjectM.CodeGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectM.HUD">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\ProjectM.HUD.dll</HintPath>
+    </Reference>
+    <Reference Include="VampireCommandFramework">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\VampireCommandFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Il2CppSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Stunlock.Localization">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Stunlock.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Stunlock.Network">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Stunlock.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="Stunlock.Network.EosSdk">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Stunlock.Network.EosSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Stunlock.Network.Lidgren">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Stunlock.Network.Lidgren.dll</HintPath>
+    </Reference>
+    <Reference Include="Stunlock.Network.Steam">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\Stunlock.Network.Steam.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>D:\ServerVrising\Crowbanepack\libs\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
+

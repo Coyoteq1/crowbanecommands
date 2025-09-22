@@ -1,0 +1,10 @@
+{
+    "name": "CrowbaneCommands",
+    "version_number": "0.1.10",
+    "website_url": "https://discord.gg/ZnGGfj69zv",
+    "description": "Full-featured administrative toolkit for V Rising dedicated servers with smart aliases, global help system, and comprehensive command management.",
+    "dependencies": [
+        "BepInEx-BepInExPack_V_Rising-1.0.0",
+        "deca-VampireCommandFramework-0.9.7"
+    ]
+}
